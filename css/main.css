@@ -520,6 +520,9 @@ main
     line-height: 1;
 }
 
+.contect__formWrap {
+    margin-top: 60px;
+}
 
 @media screen and (min-width: 769px) {
     .section.section--contect {
@@ -552,9 +555,18 @@ main
         flex: 1;
     }
 
-    /* 불필요한 container 제거되었으므로 영향 받지 않게 */
     .contect__article .container {
         all: unset;
+    }
+
+    .contect__formWrap {
+        margin-top: 0;
+    }
+    .col-first{
+        margin-top: 0;
+    }
+    .form-group{
+        margin-top: 0;
     }
 }
 
