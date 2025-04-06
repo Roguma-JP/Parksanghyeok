@@ -5,6 +5,7 @@ main
 ==========================*/
 .section--web {
     margin-top: 10px;
+    padding: 0 var(--contentPadding);
 }
 
 
@@ -12,18 +13,16 @@ main
     color: var(--primary--gold);
 }
 
-
-
 .mainTitle {
     font-size: 2.4rem;
     font-weight: 700;
-    line-height: 1;
-    margin-top: 40px;
+    line-height: 1.5;
+    margin-top: 60px;
 }
 
 .mainTitle__txt {
     display: block;
-    font-size: 2rem;
+    font-size: 1.8rem;
     font-style: normal;
     font-weight: 400;
     line-height: 100%;
@@ -63,7 +62,9 @@ main
 
 }
 
-
+.brSP {
+    display: none;
+}
 
 .portlist__topic::before {
     content: '';
@@ -77,19 +78,27 @@ main
 .portlist__txt {
     font-size: 1.6rem;
     margin-top: 10px;
+    line-height: 2;
+    text-align: justify;
 }
 
+.footer {
+    margin-top: 60px;
+}
 
 /* web PC */
 @media screen and (min-width:769px) {
     .section--web {
         margin-bottom: 60px;
+        padding: 0 var(--contentPaddingPc);
+    }
 
+    .brSP {
+        display: block;
     }
 
     .mainTitle {
         font-size: 4rem;
         margin-top: 60px;
     }
-
 }

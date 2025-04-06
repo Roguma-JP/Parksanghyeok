@@ -24,10 +24,22 @@ main
 }
 
 .worksCard__img {
-    height: 133px;
-    align-self: stretch;
-    aspect-ratio: 150/133;
+    display: block;
+    width: 100%;
+    aspect-ratio: 4 / 4;
+    overflow: hidden;
+    margin: 0;
+    border-radius: 7px;
 }
+
+.worksCard__img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    /* 중요! 줄바꿈 간격 제거 */
+}
+
 
 .worksCard__title {
     font-size: 1.4rem;
@@ -64,7 +76,7 @@ main
     padding-bottom: 15px;
 }
 
-.works__tabItem:nth-child(1) {
+.works__tabItem:nth-child(3) {
     color: var(--primary--gold);
 }
 
@@ -98,7 +110,7 @@ main
 .works__list {
     display: flex;
     flex-wrap: wrap;
-    gap: 30px;
+    gap: 0 30px;
     justify-content: flex-start;
 }
 
@@ -133,7 +145,7 @@ PC: 769px 이상
     }
 
     .works__list {
-        gap: 20px
+        gap: 40px
     }
 
     .worksCard {
@@ -144,10 +156,9 @@ PC: 769px 이상
     .worksCard__img {
         width: 100%;
         height: auto;
-        aspect-ratio: 4 / 3;
+        aspect-ratio: 4 / 3.5;
         object-fit: cover;
         display: block;
-        aspect-ratio: 4 / 3;
         margin-bottom: 0;
 
     }
@@ -158,7 +169,6 @@ PC: 769px 이상
         padding: 0 var(--contentPaddingPc);
         box-sizing: border-box;
     }
-
 
     .titleNav_menu {
         margin: 0 auto;
@@ -176,4 +186,5 @@ PC: 769px 이상
         font-weight: 400;
         line-height: 1;
     }
+
 }

@@ -5,6 +5,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="挑戦を怖がらないデザイナーパクです。">
+    <!-- ogp -->
+    <meta property="og:url" content="https://roguma-jp.github.io/Parksanghyeok/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Parksanghyeok_Portfolio">
+    <meta property="og:description" content="挑戦を怖がらないデザイナーパクです。">
+    <meta property="og:site_name" content="PARKSANGHYEOK">
+    <meta property="og:image" content="https://github.com/Roguma-JP/Parksanghyeok/blob/main/img/ogp.png?raw=true">
+    <!-- favicon apple-touch-icon -->
+    <link rel="icon" type="image/png" href="img/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="img/favicon.svg" />
+    <link rel="shortcut icon" href="img/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-title" content="PARK-PORT" />
+    <link rel="manifest" href="img/site.webmanifest" />
     <!-- web font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,7 +29,7 @@
     <link rel="stylesheet" href="css/destyle.css">
     <link rel="stylesheet" href="css/common.css">
     <link rel="stylesheet" href="css/web.css">
-    <title>PARK SANGHYEOK</title>
+    <title>PARKSANGHYEOK</title>
 </head>
 
 <body>
@@ -23,7 +37,7 @@
         <!-- nav -->
         <header id="header" class="header">
             <a href="index.html">
-                <h1 class="header__topic">Park SangHyeok</h1>
+                <h1 class="header__topic">ParkSangHyeok</h1>
             </a>
             <nav class="nav">
                 <div class="nav__header">
@@ -32,7 +46,7 @@
                 <ul class="nav__list">
                     <li class="nav__item"><a href="index.html#about"><img src="img/nav_img.svg" alt="">ABOUT</a></li>
                     <li class="nav__item"><a href="index.html#web"><img src="img/nav_img.svg" alt="">WEB</a></li>
-                    <li class="nav__item"><a href="index.html#other"><img src="img/nav_img.svg" alt="">OTHER</a></li>
+                    <li class="nav__item"><a href="/web.html"><img src="img/nav_img.svg" alt="">OTHER</a></li>
                     <li class="nav__item">
                         <div class="nav__box">
                             <a href="#contect"><img src="img/nav_img.svg" alt="">CONTACT</a>
@@ -48,57 +62,44 @@
             <section class="section section--web">
                 <div class="titileNav">
                     <p class="titleNav_menu">
-                        <a href="index.html">ホーム</a>>><a href="#">My Web Projects</a>
+                        <a href="index.html">ホーム</a>>><a href="#">Works</a>
                     </p>
                 </div>
-                <h2 class="mainTitle">My Web Projects</h2>
-                <ul class="project">
-                    <li class="project__item">
-                        <a href="vaplit.html">
-                            <img src="img/web_vapelit.png" alt="EC Site (卸売、小売サイト) vaplit">
-                            <div class="projectTopics">
-                                <p class="projectTopics__txt">EC Site (卸売、小売サイト)</p>
-                                <h4 class="projectTopics__title">VAPELIT</h4>
+                <h2 class="mainTitle">Works</h2>
+                <div class="works__tabWrapper">
+                    <ul class="works__tab">
+                        <li class="works__tabItem works__tabItem--active"><a href="web.html">Web</a></li>
+                        <li class="works__tabItem"><a href="app.html">App</a></li>
+                        <li class="works__tabItem"><a href="illust.html">イラスト</a></li>
+                    </ul>
+                    <span class="works__tabBar"></span>
+                </div>
+                <!-- 작품 카드 리스트 -->
+                <div class="works__list">
+                    <div class="worksCard">
+                        <a href="/port.html">
+                            <figure class="worksCard__img hoverImg">
+                                <img src="img/project_img1.png" alt="PORTFOLIO SITE">
+                            </figure>
+                            <div class="worksCard__body">
+                                <h3 class="worksCard__title">PORTFOLIO SITE</h3>
+                                <p class="worksCard__tag">Coding / Design</p>
                             </div>
                         </a>
-                    </li>
-                    <li class="project__item">
-                        <a href="#">
-                            <img src="img/web_ten.png" alt="EC site (個人プロジェクト）ten intelligence">
-                            <div class="projectTopics">
-                                <p class="projectTopics__txt">Recruit Site（個人プロジェクト）</p>
-                                <h4 class="projectTopics__title">ten intelligence</h4>
+                    </div>
+
+                    <div class="worksCard">
+                        <a href="/vaplit.html">
+                            <figure class="worksCard__img hoverImg ">
+                                <img src="img/project_img2.png" alt="VAPELIT">
+                            </figure>
+                            <div class="worksCard__body">
+                                <h3 class="worksCard__title">VAPELIT</h3>
+                                <p class="worksCard__tag">Coding / Design</p>
                             </div>
                         </a>
-                    </li>
-                    <li class="project__item">
-                        <a href="#">
-                            <img src="img/web_forready.png" alt="Project C Lp site">
-                            <div class="projectTopics">
-                                <p class="projectTopics__txt">準備中</p>
-                                <h4 class="projectTopics__title">Lp site</h4>
-                            </div>
-                        </a>
-                    </li>
-                    <li class="project__item">
-                        <a href="#">
-                            <img src="img/web_forready.png" alt="Project C Lp site">
-                            <div class="projectTopics">
-                                <p class="projectTopics__txt">準備中</p>
-                                <h4 class="projectTopics__title">Lp site</h4>
-                            </div>
-                        </a>
-                    </li>
-                    <li class="project__item">
-                        <a href="#">
-                            <img src="img/web_forready.png" alt="Project C Lp site">
-                            <div class="projectTopics">
-                                <p class="projectTopics__txt">準備中</p>
-                                <h4 class="projectTopics__title">Lp site</h4>
-                            </div>
-                        </a>
-                    </li>
-                </ul>
+                    </div>
+                </div>
                 <div class="btnBg">
                     <a class="subBtn" href="index.html">ホームヘ</a>
                 </div>
@@ -108,7 +109,7 @@
             <article class="footer__article">
                 <div class="footer__group">
                     <a href="#">
-                        <h2 class="footer__topic">PARK SANGHYEOK</h2>
+                        <h2 class="footer__topic">PARKSANGHYEOK</h2>
                     </a>
                     <ul class="footerNav">
                         <li class="footerNav__item"><a href="index.html#about">ABOUT</a></li>

@@ -28,7 +28,7 @@
     <!-- css -->
     <link rel="stylesheet" href="css/destyle.css">
     <link rel="stylesheet" href="css/common.css">
-    <link rel="stylesheet" href="css/vapelit.css">
+    <link rel="stylesheet" href="css/illust.css">
     <title>PARKSANGHYEOK</title>
 </head>
 
@@ -37,7 +37,7 @@
         <!-- nav -->
         <header id="header" class="header">
             <a href="index.html">
-                <h1 class="header__topic">Park SangHyeok</h1>
+                <h1 class="header__topic">ParkSangHyeok</h1>
             </a>
             <nav class="nav">
                 <div class="nav__header">
@@ -60,55 +60,70 @@
         <main>
             <hr class="hr">
             <section class="section section--web">
-                <p class="titleNav_menu">
-                    <a href="index.html">ホーム</a>>><a href="web.html">Works</a>>><a href="#">PORTFOLIO</a>
-                </p>
-                <h2 class="mainTitle">VAPELIT <br class="mtSp__br"><span class="mainTitle__txt">EC Site
-                        (作り直し)</span></h2>
-                <!-- portfolio__Information -->
-                <div class="portInfo">
-                    <img src="img/vapelit_pc.png" alt="vapelitホームページ">
-                    <ul class="portlist">
-                        <li class="portlist__box">
-                            <h3 class="portlist__topic">URL</h3>
-                            <a href="https://roguma-jp.github.io/Portfolio/"
-                                class="portlist_txt">ホームページはこちら</a>
-                        </li>
-                        <li class="portlist__box">
-                            <h3 class="portlist__topic">担当</h3>
-                            <p class="portlist__txt">デザイン／コーディング／Figma／ロゴ制作</p>
-                        </li>
-                        <li class="portlist__box">
-                            <h3 class="portlist__topic">制作期間</h3>
-                            <p class="portlist__txt">デザイン : 3日間<br>
-                                ロゴ制作 : ２日間<br>
-                                Figma : 2日間<br>
-                                コーディング: 5日間</p>
-                        </li>
-                        <li class="portlist__box">
-                            <h3 class="portlist__topic">デザインについて</h3>
-                            <p class="portlist__txt">小売・卸売のサイトです。<br>
-                                明るくてすずしいイメージがデザインのコンセプトです。<br>
-                                人の画像はAIで作られています。<br>
-                                もともとはノーコードで作られたサイトですが、<br class="brSP">
-                                コーディングを学んだあと、リデザインしました。
-                            </p>
-                        </li>
-                        <li class="portlist__box">
-                            <h3 class="portlist__topic">ロゴ制作について</h3>
-                            <p class="portlist__txt">クライアントから「ネコ」と「けむり」を組み合わせた <br class="brSP">
-                                キャラクターを作ってほしいというリクエストがありました。<br>
-                                それに合わせて、けむりのイメージに合うフォントを使ってデザインしました。</p>
-                            </p>
-                        </li>
-
-                    </ul>
-                    <div class="btnBg">
-                        <a class="subBtn" href="web.html">すべて見る</a>
-                    </div>
-                    <a class="textBtn" href="index.html">ホームへ</a>
+                <div class="titileNav">
+                    <p class="titleNav_menu">
+                        <a href="index.html">ホーム</a>>><a href="#">Works</a>
+                    </p>
                 </div>
-
+                <h2 class="mainTitle">Works</h2>
+                <div class="works__tabWrapper">
+                    <ul class="works__tab">
+                        <li class="works__tabItem"><a href="web.html">Web</a></li>
+                        <li class="works__tabItem"><a href="app.html">App</a></li>
+                        <li class="works__tabItem  works__tabItem--active"><a href="illust.html">イラスト</a></li>
+                    </ul>
+                    <span class="works__tabBar"></span>
+                </div>
+                <!-- 작품 카드 리스트 -->
+                <div class="works__list">
+                    <div class="worksCard">
+                        <a href="/melting.html">
+                            <figure class="worksCard__img hoverImg">
+                                <img src="img/Other_Melting.jpg" alt="MeltingEarthBadgeDesign">
+                            </figure>
+                            <div class="worksCard__body">
+                                <h3 class="worksCard__title">MeltingEarth</h3>
+                                <p class="worksCard__tag">Design</p>
+                            </div>
+                        </a>
+                    </div>
+                    <!-- <div class="worksCard">
+                        <a href="/vaplit.html">
+                            <figure class="worksCard__img hoverImg">
+                                <img src="img/Other_line.jpg" alt="VAPELIT">
+                            </figure>
+                            <div class="worksCard__body">
+                                <h3 class="worksCard__title">Nerumo</h3>
+                                <p class="worksCard__tag">Design</p>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="worksCard">
+                        <a href="/vaplit.html">
+                            <figure class="worksCard__img hoverImg">
+                                <img src="img/Other_sticker.jpg" alt="VAPELIT">
+                            </figure>
+                            <div class="worksCard__body">
+                                <h3 class="worksCard__title">電子名刺</h3>
+                                <p class="worksCard__tag">Design</p>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="worksCard">
+                        <a href="/vaplit.html">
+                            <figure class="worksCard__img hoverImg">
+                                <img src="img/Other_sticker2.jpg" alt="VAPELIT">
+                            </figure>
+                            <div class="worksCard__body">
+                                <h3 class="worksCard__title">Sticker</h3>
+                                <p class="worksCard__tag">Design</p>
+                            </div>
+                        </a>
+                    </div> -->
+                </div>
+                <div class="btnBg">
+                    <a class="subBtn" href="index.html">ホームヘ</a>
+                </div>
             </section>
         </main>
         <footer id="footer" class="footer">

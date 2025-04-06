@@ -6,7 +6,33 @@ document.addEventListener("DOMContentLoaded", function () {
     const closeBtn = document.querySelectorAll(".nav__header img, .nav__item a");
     const topBtn = document.getElementById("topBtn");
     const navLinks = document.querySelectorAll(".nav__item a, .footerNav__item a");
-    
+
+   // 🆕 about section toggle
+const aboutHeaders = document.querySelectorAll(".js-about-toggle");
+
+aboutHeaders.forEach((header) => {
+    const parent = header.closest(".about");
+    const arrow = header.querySelector(".about__arrow");
+    const content = parent.querySelector(".about__content");
+
+    header.addEventListener("click", () => {
+        const isOpen = content.classList.contains("about__content--open");
+
+        if (isOpen) {
+            content.style.maxHeight = null;
+            content.classList.remove("about__content--open");
+        } else {
+            content.classList.add("about__content--open");
+
+            // 💡 padding이 적용된 다음에 높이 계산해야 정확함
+            setTimeout(() => {
+                content.style.maxHeight = content.scrollHeight + "px";
+            }, 0);
+        }
+
+        arrow.classList.toggle("about__arrow--open");
+    });
+});
     // トップへスムーズ移動
     function handleTopBtnClick(event) {
         event.preventDefault();
@@ -74,4 +100,55 @@ document.addEventListener("DOMContentLoaded", function () {
             link.addEventListener("click", handleNavLinkClick);
         });
     }
+    
+// 페이지 진입 시 페이드 인
+window.addEventListener("DOMContentLoaded", () => {
+    document.body.style.opacity = 1;
+});
+
+// 페이지 이탈 시 페이드 아웃
+const fadeLinks = document.querySelectorAll('a[href$=".html"]');
+
+fadeLinks.forEach(link => {
+    link.addEventListener("click", function (e) {
+        e.preventDefault();
+        const href = this.getAttribute("href");
+
+        // 페이드 아웃 효과
+        document.body.classList.add("fade-out");
+
+        // 애니메이션 끝난 후 이동
+        setTimeout(() => {
+            window.location.href = href;
+        }, 700); // CSS와 동일한 시간
+    });
+});
+    
+ // ✅ 골드 바 탭 애니메이션
+    const tabItems = document.querySelectorAll('.works__tabItem');
+    const tabBar = document.querySelector('.works__tabBar');
+
+    function updateTabBar(el) {
+        const offsetLeft = el.offsetLeft;
+        const width = el.offsetWidth;
+
+        tabBar.style.left = offsetLeft + 'px';
+        tabBar.style.width = width + 'px';
+    }
+
+    tabItems.forEach(item => {
+        item.addEventListener('click', function () {
+            tabItems.forEach(i => i.classList.remove('works__tabItem--active'));
+            this.classList.add('works__tabItem--active');
+            updateTabBar(this);
+        });
+    });
+
+const activeTab = document.querySelector('.works__tabItem--active');
+if (activeTab && tabBar) {
+    // 로딩 후 약간의 시간 뒤에 위치 설정 (페이드인 겹침 방지)
+    setTimeout(() => {
+        updateTabBar(activeTab);
+    }, 200);
+}
 });
