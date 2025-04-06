@@ -120,7 +120,7 @@ fadeLinks.forEach(link => {
         // 애니메이션 끝난 후 이동
         setTimeout(() => {
             window.location.href = href;
-        }, 700); // CSS와 동일한 시간
+        }, 800); // CSS와 동일한 시간
     });
 });
     
