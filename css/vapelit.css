@@ -61,7 +61,10 @@ main
     /* 40px */
 
 }
-
+.portlist_txt{
+    color: var(--primary--gold);
+    border-bottom: 1px solid var(--primary--gold);
+}
 .brSP {
     display: none;
 }

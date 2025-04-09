@@ -158,6 +158,8 @@ main
     display: none;
 }
 
+
+
 @media screen and (min-width:769px) {
     img {
         max-width: none;
@@ -363,7 +365,6 @@ main
     padding: 20px 0;
     font-size: 1.4rem;
     line-height: 2;
-    /* text-align: justify; */
 }
 
 .mainTopics__hr {
@@ -489,7 +490,9 @@ main
     color: var(--primary--bgColor);
     font-size: 1.8rem;
 }
-
+.col:first-of-type {
+    margin-top: 70px;
+}
 .form-group__topic,
 .col__topic {
     font-weight: 500;
@@ -519,6 +522,7 @@ main
     font-weight: 500;
     line-height: 1;
 }
+
 
 .contect__formWrap {
     margin-top: 60px;

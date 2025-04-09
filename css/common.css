@@ -103,7 +103,16 @@ img {
 .subBtn:hover {
     opacity: 0.7;
 }
+.subBtn--Other {
+    background-color: var(--primary--white);
+    color: var(--primary--gold);
+    border: 1px solid var(--primary--gold);
+    margin-top: 48px;
+}
 
+.btnBg--Other {
+    padding: 0 var(--contentPadding);
+}
 .textBtn {
     display: flex;
     justify-content: center;
@@ -114,7 +123,7 @@ img {
 }
 
 .textBtn:hover {
-    opacity: 0.7;
+    opacity: 0.5;
 }
 
 /* common PC */
