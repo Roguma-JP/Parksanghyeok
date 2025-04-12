@@ -21,6 +21,10 @@ body {
     transition: opacity 0.8s ease;
 }
 
+video {
+    display: block;
+}
+
 .hoverImg {
     transition: opacity 0.3s ease-in-out;
 }
@@ -69,6 +73,14 @@ img {
     line-height: 1;
 }
 
+.hoverVideo {
+    width: 100%;
+    
+    height: auto;
+    border-radius: 12px;
+    object-fit: cover;
+    display: block;
+}
 
 /* btn style */
 .btn {

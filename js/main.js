@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const topBtn = document.getElementById("topBtn");
     const navLinks = document.querySelectorAll(".nav__item a, .footerNav__item a");
 
-   // 🆕 about section toggle
+   // about section toggle
 const aboutHeaders = document.querySelectorAll(".js-about-toggle");
 
 aboutHeaders.forEach((header) => {
@@ -24,7 +24,7 @@ aboutHeaders.forEach((header) => {
         } else {
             content.classList.add("about__content--open");
 
-            // 💡 padding이 적용된 다음에 높이 계산해야 정확함
+            // 
             setTimeout(() => {
                 content.style.maxHeight = content.scrollHeight + "px";
             }, 0);
@@ -144,11 +144,38 @@ fadeLinks.forEach(link => {
         });
     });
 
-const activeTab = document.querySelector('.works__tabItem--active');
-if (activeTab && tabBar) {
-    // 로딩 후 약간의 시간 뒤에 위치 설정 (페이드인 겹침 방지)
-    setTimeout(() => {
-        updateTabBar(activeTab);
-    }, 200);
-}
-});
+    const activeTab = document.querySelector('.works__tabItem--active');
+    if (activeTab && tabBar) {
+        // 로딩 후 약간의 시간 뒤에 위치 설정 (페이드인 겹침 방지)
+        setTimeout(() => {
+            updateTabBar(activeTab);
+        }, 200);
+    }
+    });
+
+    document.querySelectorAll('.hoverVideo').forEach(video => {
+    video.addEventListener('mouseenter', () => {
+        video.play();
+    });
+    video.addEventListener('mouseleave', () => {
+        video.pause();
+        video.currentTime = 0;
+        video.load();
+    });
+        document.querySelectorAll('.youtubeThumbnail').forEach(container => {
+            const videoId = container.dataset.videoId;
+            const iframe = document.createElement('iframe');
+
+                iframe.src = `https://www.youtube.com/embed/${videoId}?rel=0&showinfo=0&autoplay=1`;
+                iframe.frameBorder = "0";
+                iframe.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture";
+                iframe.allowFullscreen = true;
+                iframe.width = "100%";
+                iframe.height = "100%";
+
+            container.addEventListener('click', () => {
+                container.innerHTML = '';
+                container.appendChild(iframe);
+            });
+            });
+    });

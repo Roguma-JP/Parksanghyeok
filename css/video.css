@@ -76,7 +76,7 @@ main
     padding-bottom: 15px;
 }
 
-.works__tabItem:nth-child(2) {
+.works__tabItem:nth-child(4) {
     color: var(--primary--gold);
 }
 
