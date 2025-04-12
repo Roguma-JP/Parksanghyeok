@@ -143,7 +143,6 @@ img {
     .section {
         max-width: 1280px;
         margin: 0 auto;
-        padding: 0 var(--contentPaddingPc);
     }
 
     .btn {
@@ -161,10 +160,8 @@ img {
     .btnBg {
         display: flex;
         justify-content: center;
-        margin-top: 30px;
+        margin-top: 48px;
     }
-
-    /* pc */
 }
 
 /* common End */
