@@ -1,38 +1,36 @@
-/* es6 */
 document.addEventListener("DOMContentLoaded", function () {
     'use strict';
+
     const menuBtn = document.querySelector(".menuBtn");
     const nav = document.querySelector(".nav");
     const closeBtn = document.querySelectorAll(".nav__header img, .nav__item a");
     const topBtn = document.getElementById("topBtn");
     const navLinks = document.querySelectorAll(".nav__item a, .footerNav__item a");
 
-   // about section toggle
-const aboutHeaders = document.querySelectorAll(".js-about-toggle");
+    // about section toggle
+    const aboutHeaders = document.querySelectorAll(".js-about-toggle");
+    aboutHeaders.forEach((header) => {
+        const parent = header.closest(".about");
+        const arrow = header.querySelector(".about__arrow");
+        const content = parent.querySelector(".about__content");
 
-aboutHeaders.forEach((header) => {
-    const parent = header.closest(".about");
-    const arrow = header.querySelector(".about__arrow");
-    const content = parent.querySelector(".about__content");
+        header.addEventListener("click", () => {
+            const isOpen = content.classList.contains("about__content--open");
 
-    header.addEventListener("click", () => {
-        const isOpen = content.classList.contains("about__content--open");
+            if (isOpen) {
+                content.style.maxHeight = null;
+                content.classList.remove("about__content--open");
+            } else {
+                content.classList.add("about__content--open");
+                setTimeout(() => {
+                    content.style.maxHeight = content.scrollHeight + "px";
+                }, 0);
+            }
 
-        if (isOpen) {
-            content.style.maxHeight = null;
-            content.classList.remove("about__content--open");
-        } else {
-            content.classList.add("about__content--open");
-
-            // 
-            setTimeout(() => {
-                content.style.maxHeight = content.scrollHeight + "px";
-            }, 0);
-        }
-
-        arrow.classList.toggle("about__arrow--open");
+            arrow.classList.toggle("about__arrow--open");
+        });
     });
-});
+
     // トップへスムーズ移動
     function handleTopBtnClick(event) {
         event.preventDefault();
@@ -100,31 +98,41 @@ aboutHeaders.forEach((header) => {
             link.addEventListener("click", handleNavLinkClick);
         });
     }
-    
-// 페이지 진입 시 페이드 인
-window.addEventListener("DOMContentLoaded", () => {
+
+    // ✅ 페이지 진입 시 페이드 인
     document.body.style.opacity = 1;
-});
 
-// 페이지 이탈 시 페이드 아웃
-const fadeLinks = document.querySelectorAll('a[href$=".html"]');
-
-fadeLinks.forEach(link => {
-    link.addEventListener("click", function (e) {
-        e.preventDefault();
-        const href = this.getAttribute("href");
-
-        // 페이드 아웃 효과
-        document.body.classList.add("fade-out");
-
-        // 애니메이션 끝난 후 이동
-        setTimeout(() => {
-            window.location.href = href;
-        }, 800); // CSS와 동일한 시간
+    // ✅ 페이지 이탈 시 페이드 아웃
+    const fadeLinks = document.querySelectorAll('a[href$=".html"]');
+    fadeLinks.forEach(link => {
+        link.addEventListener("click", function (e) {
+            e.preventDefault();
+            const href = this.getAttribute("href");
+            document.body.classList.add("fade-out");
+            setTimeout(() => {
+                window.location.href = href;
+            }, 800);
+        });
     });
-});
-    
- // ✅ 골드 바 탭 애니메이션
+
+    // ✅ 스크롤 페이드 인 요소
+    function handleScrollFade() {
+        const fadeElements = document.querySelectorAll('.scroll-fade');
+        const windowHeight = window.innerHeight;
+
+        fadeElements.forEach(el => {
+            const rect = el.getBoundingClientRect();
+            const offset = 100;
+            if (rect.top < windowHeight - offset) {
+                el.classList.add('visible');
+            }
+        });
+    }
+
+    window.addEventListener('load', handleScrollFade);
+    window.addEventListener('scroll', handleScrollFade);
+
+    // ✅ 골드 바 탭 애니메이션
     const tabItems = document.querySelectorAll('.works__tabItem');
     const tabBar = document.querySelector('.works__tabBar');
 
@@ -146,36 +154,38 @@ fadeLinks.forEach(link => {
 
     const activeTab = document.querySelector('.works__tabItem--active');
     if (activeTab && tabBar) {
-        // 로딩 후 약간의 시간 뒤에 위치 설정 (페이드인 겹침 방지)
         setTimeout(() => {
             updateTabBar(activeTab);
         }, 200);
     }
-    });
 
+    // ✅ hover 영상 재생
     document.querySelectorAll('.hoverVideo').forEach(video => {
-    video.addEventListener('mouseenter', () => {
-        video.play();
+        video.addEventListener('mouseenter', () => {
+            video.play();
+        });
+        video.addEventListener('mouseleave', () => {
+            video.pause();
+            video.currentTime = 0;
+            video.load();
+        });
     });
-    video.addEventListener('mouseleave', () => {
-        video.pause();
-        video.currentTime = 0;
-        video.load();
-    });
-        document.querySelectorAll('.youtubeThumbnail').forEach(container => {
-            const videoId = container.dataset.videoId;
-            const iframe = document.createElement('iframe');
 
-                iframe.src = `https://www.youtube.com/embed/${videoId}?rel=0&showinfo=0&autoplay=1`;
-                iframe.frameBorder = "0";
-                iframe.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture";
-                iframe.allowFullscreen = true;
-                iframe.width = "100%";
-                iframe.height = "100%";
+    // ✅ YouTube 썸네일 클릭 시 iframe 삽입
+    document.querySelectorAll('.youtubeThumbnail').forEach(container => {
+        const videoId = container.dataset.videoId;
+        const iframe = document.createElement('iframe');
 
-            container.addEventListener('click', () => {
-                container.innerHTML = '';
-                container.appendChild(iframe);
-            });
-            });
+        iframe.src = `https://www.youtube.com/embed/${videoId}?rel=0&showinfo=0&autoplay=1`;
+        iframe.frameBorder = "0";
+        iframe.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture";
+        iframe.allowFullscreen = true;
+        iframe.width = "100%";
+        iframe.height = "100%";
+
+        container.addEventListener('click', () => {
+            container.innerHTML = '';
+            container.appendChild(iframe);
+        });
     });
+});

@@ -1,0 +1,236 @@
+@charset "utf-8";
+
+/*==========================
+main
+==========================*/
+.section--web {
+    margin-top: 10px;
+    padding: 0 var(--contentPadding);
+}
+
+
+.titleNav_menu a:nth-child(3) {
+    color: var(--primary--gold);
+}
+
+.mainTitle {
+    font-size: 2.4rem;
+    font-weight: 600;
+    line-height: 1.5;
+    margin-top: 60px;
+}
+
+.mainTitle__txt {
+    display: block;
+    font-size: 1.8rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1;
+    color: var(--primary-black);
+    opacity: 0.8;
+    margin-top: 5px;
+}
+
+.portBanner {
+    margin-top: 48px;
+}
+
+.projectInfo__value a {
+    border-bottom: 1px solid var(--primary--gold);
+    color: var(--primary--gold);
+}
+
+.Portwebm {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.Portwebm .video {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    display: block;
+    border-radius: 12px;
+}
+
+.Portwebm--sub .video {
+    aspect-ratio: 16 / 9;
+}
+
+.video {
+    margin-top: 48px;
+}
+
+.projectInfo {
+    margin-top: 28px;
+    line-height: 1.5;
+}
+
+.projectInfo__label {
+    margin-top: 20px;
+    font-size: 1.6rem;
+    font-weight: 500;
+    line-height: 1.5;
+    color: var(--primary-gray);
+}
+
+.projectInfo__value {
+    font-size: 1.6rem;
+    font-weight: 500;
+    margin-top: 4px;
+    line-height: 1.5;
+}
+
+.youtubePlayer {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+    border-radius: 12px;
+    background-color: #000;
+}
+
+.youtubePlayer iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+
+}
+
+.youtubeThumbnail {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    cursor: pointer;
+    overflow: hidden;
+    margin-top: 48px;
+}
+
+.youtubeThumbnail img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: 0.4s;
+}
+
+.youtubeThumbnail img:hover {
+    opacity: 0.8;
+}
+
+.subBtn {
+    margin-top: 60px;
+}
+
+.portInfo {
+    margin-top: 20px;
+}
+
+.portInfo img {
+    border-radius: 10px;
+}
+
+.portlist {
+    margin-top: 50px;
+}
+
+.portlist__box {
+    margin-top: 20px;
+}
+
+.portlist__box a {
+    font-size: 1.6rem;
+}
+
+.portlist__topic {
+    font-size: 2rem;
+    font-weight: 600;
+    line-height: 1.5;
+    align-items: center;
+    display: flex;
+    align-items: center;
+    margin-top: 48px;
+}
+
+.portlist_txt {
+    color: var(--primary--gold);
+    border-bottom: 1px solid var(--primary--gold);
+}
+
+.brSP {
+    display: none;
+}
+
+
+.portlist__txt {
+    font-size: 1.6rem;
+    margin-top: 10px;
+    line-height: 2;
+    text-align: justify;
+}
+
+.footer {
+    margin-top: 60px;
+}
+
+/* web PC */
+@media screen and (min-width:769px) {
+    .section--web {
+        margin-bottom: 60px;
+        padding: 0 var(--contentPaddingPc);
+    }
+
+    .brSP {
+        display: block;
+    }
+
+    .mainTitle {
+        margin-top: 60px;
+        font-size: 3.2rem;
+    }
+
+    .projectInfo {
+        margin-top: 48px;
+    }
+
+    .portlist__topremic {
+        font-size: 4.8rem;
+    }
+
+    .portlist__topic {
+        font-size: 3.2rem;
+        margin-top: 80px;
+
+    }
+
+    .portlist__txt {
+        font-size: 1.6rem;
+        margin-top: 20px;
+    }
+
+    .portBanner {
+        margin-top: 96px;
+    }
+
+    .video {
+        margin-top: 0;
+    }
+
+
+    .Portwebm {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .Portwebm .video {
+        width: 100%;
+        max-width: calc(50% - 10px);
+    }
+}

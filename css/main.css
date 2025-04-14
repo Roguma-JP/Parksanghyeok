@@ -1,6 +1,7 @@
 /*==========================
 main
 ==========================*/
+
 .mainImg {
     position: relative;
     text-align: center;
@@ -79,14 +80,6 @@ main
     font-weight: 600;
     line-height: 100%;
     margin-top: 60px;
-    /* 26px */
-}
-
-
-.webTopic,
-.project,
-.section--contect {
-    padding: 0 var(--contentPadding);
 }
 
 .webTopic::before {
@@ -97,6 +90,10 @@ main
     background-image: url('../img/titleImg.svg');
     background-size: cover;
     background-repeat: no-repeat;
+}
+
+.webTopic--about {
+    margin-top: 0;
 }
 
 .project__img {
@@ -156,8 +153,11 @@ main
 }
 
 .projectHr {
+    width: 100vw;
     margin-top: 48px;
-    border: 1px solid var(--primary-bgColor2);
+    margin-left: calc(50% - 50vw);
+    border: none;
+    border-top: 1px solid rgba(0, 0, 0, 0.10);
 }
 
 .brPc {
@@ -211,9 +211,6 @@ main
 
     .project {
         display: flex;
-        max-width: 1280px;
-        padding: 0 var(--contentPaddingPc);
-        margin: 0 auto;
         overflow-x: hidden;
         justify-content: space-between;
         align-items: stretch;
@@ -251,27 +248,20 @@ main
 
     .webTopic {
         max-width: 1280px;
-        padding: 0 var(--contentPaddingPc);
         margin: 60px auto 30px;
         color: var(--primary-black);
-        font-size: 4rem;
+        font-size: 2.6rem;
         font-style: normal;
         font-weight: 700;
         line-height: 1;
     }
-
+.webTopic--about {
+    padding: 0 var(--contentPaddingPc);
+}
     .ProjectTopic__title {
         color: var(--primary-black);
         font-family: Montserrat;
         font-size: 50px;
-    }
-
-    .projectHr {
-        width: 100vw;
-        margin-top: 100px;
-        margin-left: calc(50% - 50vw);
-        border: none;
-        border-top: 1px solid rgba(0, 0, 0, 0.10);
     }
 
     .procject--margin {
@@ -296,32 +286,30 @@ main
         width: 40px;
         height: 40px;
     }
+
+    .projectHr {
+        margin-top: 100px;
+    }
 }
 
 /* about */
 .mainTopics {
-    position: relative;
-    background-color: var(--primary-bgColor2);
     border-radius: 20px 20px 0 0;
-    margin-top: 60px;
-}
-
-.mainTopics__article {
-    padding: 90px var(--contentPadding) 60px;
+    margin-top: 26px;
+    
 }
 
 .mainTopics__title {
-    left: 10%;
-    top: 154%;
-    position: absolute;
-    font-family: "Klee One";
-    font-size: 2.6rem;
-    font-weight: 600;
-    z-index: 2;
+    color: var(--primary-black);
+    font-size: 1.4rem;
+    font-weight: 700;
+    line-height: 1.5;
+        margin-top: 30px;
+    /* 21px */
 }
 
 .mainTopics__txt {
-    margin-top: 30px;
+
     font-size: 1.4rem;
     font-style: normal;
     font-weight: 400;
@@ -332,6 +320,12 @@ main
 
 .title {
     color: var(--primary--bgColor);
+}
+
+.section--about {
+    background-color: var(--primary-bgColor2);
+    margin: 60px auto 0;
+    padding: 60px var(--contentPadding) 60px;
 }
 
 .about__header {
@@ -418,7 +412,7 @@ main
     .mainTopicsVisual {
         max-width: 1280px;
         height: 382px;
-        padding-top: 116px;
+
     }
 
     .mainTopics__article {
@@ -469,7 +463,7 @@ main
     }
 
     .mainTopics__topic {
-        margin-top: 160px;
+        margin-top: 40px;
     }
 }
 
@@ -480,8 +474,6 @@ main
 .section__topic--contect {
     color: var(--primary--bgColor);
     align-items: center;
-    position: absolute;
-
 }
 
 .section__topic--contect::before {
@@ -500,12 +492,12 @@ main
 }
 
 .section--contect {
-    background-color: var(--primary-bgColor2);
+    background-color: var(--primary-deepBlue);
+    padding: 60px var(--contentPadding);
 }
 
 .contect__article {
-    background-color: var(--primary-deepBlue);
-    padding: 60px var(--contentPadding);
+
     border-radius: 20px 20px 0 0;
 }
 
@@ -567,26 +559,23 @@ main
 }
 
 @media screen and (min-width: 769px) {
-    .section.section--contect {
-        padding: 0 !important;
-        max-width: 100% !important;
-        width: 100%;
-    }
+
 
     .section--contect {
         background-color: var(--primary-deepBlue);
+        max-width: 100%;
     }
 
     .contect__article {
         display: flex;
         justify-content: space-between;
-        align-items: flex-start;
+        align-items: center;
         max-width: 1280px;
         gap: 80px;
         margin: 0 auto;
         padding: 100px var(--contentPaddingPc);
         border-radius: 40px 40px 0 0;
-        background-color: var(--primary-deepBlue);
+
     }
 
     .contect__title {
