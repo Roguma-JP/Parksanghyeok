@@ -47,6 +47,12 @@ main
     box-sizing: border-box;
 }
 
+.portBanner--sp {
+    display: block;
+}
+.portBanner--pc {
+    display: none;
+}
 .Portwebm .video {
     width: 100%;
     height: auto;
@@ -189,6 +195,14 @@ main
 
     .brSP {
         display: block;
+    }
+
+    .portBanner--pc {
+        display: block;
+    }
+
+    .portBanner--sp {
+        display: none;
     }
 
     .mainTitle {
